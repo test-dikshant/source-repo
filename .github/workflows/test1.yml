@@ -1,4 +1,4 @@
-name: Hello World Workflow
+name: test
 on:
   workflow_dispatch:
 jobs:
