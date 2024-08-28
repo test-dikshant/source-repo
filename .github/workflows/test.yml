@@ -10,3 +10,11 @@ jobs:
     steps:
     - name: Echo Hello
       run: echo "Hello, World!"  # The command that will be executed
+      
+    - name: Trigger Second Workflow
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          https://api.github.com/repos/test-dikshant/target-repo/dispatches \
+          -d '{"event_type": "trigger-grafana"}'
