@@ -43,10 +43,7 @@ echo "Enabling required APIs..."
 gcloud services enable compute.googleapis.com --project="$PROJECT_ID"
 
 # Get the latest image from the specified family
-IMAGE_PROJECT="debian-cloud" # Change this if using a different project for images
-IMAGE=$(gcloud compute images list --project="$IMAGE_PROJECT" \
-  --filter="family:$IMAGE_FAMILY" --format="value(name)" | head -n 1)
-
+IM
 if [[ -z "$IMAGE" ]]; then
   echo "Error: No image found for family '$IMAGE_FAMILY' in project '$IMAGE_PROJECT'."
   exit 1
